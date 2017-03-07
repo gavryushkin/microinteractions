@@ -11,10 +11,10 @@ lm_fitness = smf.ols(formula="fitness ~ a + a1 + a2 + a3 + a4 + a5 +"
                              "b12 + b13 + b14 + b15 + b23 + b24 + b25 + b34 + b35 + b45 +"
                              "c123 + c124 + c125 + c134 + c135 + c145 + c234 + c235 + c245 + c345 +"
                              "d1234 + d1235 + d1245 + d1345 + d2345 + e12345", data=data).fit()
-model_params = ("a", "a1", "a2", "a3", "a4", "a5", "b12", "b13", "b14", "b15",
-                "b23", "b24", "b25", "b34", "b35", "b45", "c123", "c124", "c125",
-                "c134", "c135", "c145", "c234", "c235", "c245", "c345", "d1234",
-                "d1235", "d1245", "d1345", "d2345", "e12345")
+# model_params = ("a", "a1", "a2", "a3", "a4", "a5", "b12", "b13", "b14", "b15",
+#                 "b23", "b24", "b25", "b34", "b35", "b45", "c123", "c124", "c125",
+#                 "c134", "c135", "c145", "c234", "c235", "c245", "c345", "d1234",
+#                 "d1235", "d1245", "d1345", "d2345", "e12345")
 
 output_file = open("taylor_lin_fit_result.txt", "w")
 output_file.write("## Results for development time\n\n")
