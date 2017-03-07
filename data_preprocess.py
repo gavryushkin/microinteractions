@@ -2,6 +2,7 @@ import pandas as pd
 
 
 data = pd.read_csv("fitness_summary_all_replicates.csv")
+# Add all parameters (Taylor coefficients) as 0 in rows following the data:
 for i in range(data.shape[0]):
         for j in range(16, 48):
                 data.set_value(i, j, 0)
@@ -12,6 +13,7 @@ data.rename(columns={16: "a", 17: "a1", 18: "a2", 19: "a3", 20: "a4", 21: "a5",
         40: "c245", 41: "c345", 42: "d1234", 43: "d1235", 44: "d1245",
         45: "d1345", 46: "d2345", 47: "e12345"}, inplace=True)
 
+# Change coefficients corresponding to present effects to 1:
 for index, row in data.iterrows():
 	species = row["LP"] + row["LB"] + row["AP"] + row["AT"] + row["AO"]
 	if species == "YNNNN":
@@ -289,6 +291,5 @@ for index, row in data.iterrows():
 		data.set_value(index, "e12345", 1)
 	if species == "NNNNN":
 		data.set_value(index, "a", 1)
-#del data["Unnamed: 0"]
 data.to_csv("fitness_summary_all_replicates_parameters.csv", sep="\t")
 
