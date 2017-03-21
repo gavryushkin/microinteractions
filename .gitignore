@@ -136,4 +136,5 @@ js/
 lib/
 plugin/
 *.csv
+*.xlsx
 .ipynb_checkpoints/
