@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-data = pd.read_csv("flygut_cfus_2017-10-31_expts1345_totals.csv")
+data = pd.read_csv("flygut_cfus_expts1345_totals.csv")
 n = len(data.columns)
 
 # Add all parameters (Taylor coefficients) as 0 in rows following the data:
@@ -293,4 +293,4 @@ for index, row in data.iterrows():
 		data.set_value(index, "e12345", 1)
 	if combo == 32:
 		data.set_value(index, "a", 1)
-data.to_csv("flygut_cfus_201710-31_expts1345_totals_processed.csv")
+data.to_csv("flygut_cfus_expts1345_totals_processed.csv")
